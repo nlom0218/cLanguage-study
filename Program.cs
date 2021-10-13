@@ -6,8 +6,8 @@ namespace HelloWord
   {
     static void Main(string[] args)
     {
-      int hp;
-      hp = 100;
+      //   int hp;
+      //   hp = 100;
       //   // 정수 = 1, 2, 3, 10, 100 같이 딱 떨어지는 숫자(음수, 0, 양수 모두) -> int
       //   // byte(1바이트 0~255), short(2바이트 -3만 ~ 3만), int(4바이트 -21억 ~ 21억), long(8바이트) -> 숫자를 나타내는 변수
       //   // sbyte(1바이트 -128 ~ 127), ushort(2바이트 0 ~ 6만), uint(4바이트 0 ~ 43억), ulong(8바이트)
@@ -37,21 +37,45 @@ namespace HelloWord
       //   char c = 'a'; // 2바이트
       //   string str = "Hellow Number";
 
-      // 형식 병환
-      // 1. 바구니 크기가 다른 경우
-      int a = 1000;
-      short b = (short)a;
+      //   // 형식 병환
+      //   // 1. 바구니 크기가 다른 경우
+      //   int a = 1000;
+      //   short b = (short)a;
 
-      // 2. 바구니 크기는 같은 한데, 부호가 다를 경우
-      byte c = 255;
-      sbyte sb = (sbyte)c;
-      // 0xFF = 0b11111111 = -1
+      //   // 2. 바구니 크기는 같은 한데, 부호가 다를 경우
+      //   byte c = 255;
+      //   sbyte sb = (sbyte)c;
+      //   // 0xFF = 0b11111111 = -1
 
-      // 3. 소수
-      float f = 3.1313f;
-      double d = f;
+      //   // 3. 소수
+      //   float f = 3.1313f;
+      //   double d = f;
 
-      Console.WriteLine("Hello Number ! {0}", hp);
+      int hp = 100;
+      //   hp = 100 % 3; 
+      //   hp++; // = hp + 1
+      //   hp--; // = hp - 1
+      Console.WriteLine(hp++);
+
+      bool b = (hp == 101);
+      Console.WriteLine(b);
+
+      bool isAlive = (hp > 0);
+      int level = 50;
+      bool isHighLevel = (level >= 40);
+
+      // && => AND
+      // || => OR
+      // ! => NOT
+
+      // a = 살아있는 고렙 유저인가요?
+      bool a = isAlive && isHighLevel;
+
+      // bb = 살아있거나, 고렙 유저이거나, 둘 중 하나인가요?
+      bool bb = isAlive || isHighLevel;
+
+      // c = 죽은 유저인가요?
+      bool c = !isAlive;
     }
   }
 }
