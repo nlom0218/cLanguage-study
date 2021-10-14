@@ -51,31 +51,38 @@ namespace HelloWord
       //   float f = 3.1313f;
       //   double d = f;
 
-      int hp = 100;
-      //   hp = 100 % 3; 
-      //   hp++; // = hp + 1
-      //   hp--; // = hp - 1
-      Console.WriteLine(hp++);
+      //   int hp = 100;
+      //   //   hp = 100 % 3; 
+      //   //   hp++; // = hp + 1
+      //   //   hp--; // = hp - 1
+      //   Console.WriteLine(hp++);
 
-      bool b = (hp == 101);
-      Console.WriteLine(b);
+      //   bool b = (hp == 101);
+      //   Console.WriteLine(b);
 
-      bool isAlive = (hp > 0);
-      int level = 50;
-      bool isHighLevel = (level >= 40);
+      //   bool isAlive = (hp > 0);
+      //   int level = 50;
+      //   bool isHighLevel = (level >= 40);
 
-      // && => AND
-      // || => OR
-      // ! => NOT
+      //   // && => AND
+      //   // || => OR
+      //   // ! => NOT
 
-      // a = 살아있는 고렙 유저인가요?
-      bool a = isAlive && isHighLevel;
+      //   // a = 살아있는 고렙 유저인가요?
+      //   bool a = isAlive && isHighLevel;
 
-      // bb = 살아있거나, 고렙 유저이거나, 둘 중 하나인가요?
-      bool bb = isAlive || isHighLevel;
+      //   // bb = 살아있거나, 고렙 유저이거나, 둘 중 하나인가요?
+      //   bool bb = isAlive || isHighLevel;
 
-      // c = 죽은 유저인가요?
-      bool c = !isAlive;
+      //   // c = 죽은 유저인가요?
+      //   bool c = !isAlive;
+
+      // 비트 연산
+      // << >> &(and) |(or) ^(xor) ~(not)
+      int num = 1;
+      num = num << 3;
+      num = 22 | 45;
+      Console.WriteLine(num);
     }
   }
 }
