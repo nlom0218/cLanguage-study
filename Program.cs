@@ -79,10 +79,71 @@ namespace HelloWord
 
       // 비트 연산
       // << >> &(and) |(or) ^(xor) ~(not)
-      int num = 1;
-      num = num << 3;
-      num = 22 | 45;
-      Console.WriteLine(num);
+      //   int num = 1;
+      //   num = num << 3;
+      //   num = 22 | 45;
+      //   Console.WriteLine(num);
+
+      // int a;
+      // a = 100;
+      // a = a + 1;
+      // a += 1;
+      // a = a - 1;
+      // a -= 1;
+      // a = a * 1;
+      // a *= 1;
+      // a = a / 1;
+      // a /= 1;
+      // a = a & 1;
+      // a &= 1;
+      // a = 1;
+      // a = a << 1;
+      // a <<= 1;
+      // a = a >> 1;
+      // a >>= 1;
+      // a = a & 1;
+      // a &= 1;
+      // a = a | 1;
+      // a |= 1;
+      // Console.WriteLine(a);
+
+      // 연산 우선 순위
+      // 1. ++ --
+      // 2. * / %
+      // 3. + -
+      // 4. << >>
+      // 5. < >
+      // 6. == !=
+      // 7. &
+      // 8. ^
+      // 9. |
+      // ...
+      // 외워서 하는 것 보다 가로의 중첩을 이용하여 우선 순위를 만들자.
+      // int hp = 10;
+      // bool isDead = (hp <= 0);
+
+      // if (isDead)
+      // {
+      //   Console.WriteLine("You are dead!");
+      // }
+      // else
+      // {
+      //   Console.WriteLine("You are alive");
+      // }
+      int choice = 2; // 0:가위 1:바위 2:보
+
+      if (choice == 0)
+      {
+        Console.WriteLine("가위입니다.");
+      }
+      else if (choice == 1)
+      {
+        Console.WriteLine("바위입니다.");
+      }
+      else
+      {
+        Console.WriteLine("보입니다.");
+      }
     }
   }
 }
