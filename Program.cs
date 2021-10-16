@@ -130,7 +130,7 @@ namespace HelloWord
       // {
       //   Console.WriteLine("You are alive");
       // }
-      int choice = 2; // 0:가위 1:바위 2:보 3:치트키
+      // int choice = 2; // 0:가위 1:바위 2:보 3:치트키 
 
       // if (choice == 0)
       // {
@@ -148,25 +148,30 @@ namespace HelloWord
       // switch case break 3종 세트이다. 
       // 값는 정수 또는 문자열이다.
       // if문이 응용 범위가 더 많다.
-      switch (choice)
-      {
-        case 0:
-          Console.WriteLine("가위입니다.");
-          break;
-        case 1:
-          Console.WriteLine("바위입니다.");
-          break;
-        case 2:
-          Console.WriteLine("보입니다.");
-          break;
-        case 3:
-          Console.WriteLine("치트키입니다.");
-          break;
-        default:
-          // default는 if / else 문에서 else에 해당된다. 즉, 모든 조건에 만족하지 않는다면 밑의 로직이 실행
-          Console.WriteLine("다 실패했습니다.");
-          break;
-      }
+      // switch (choice)
+      // {
+      //   case 0:
+      //     Console.WriteLine("가위입니다.");
+      //     break;
+      //   case 1:
+      //     Console.WriteLine("바위입니다.");
+      //     break;
+      //   case 2:
+      //     Console.WriteLine("보입니다.");
+      //     break;
+      //   case 3:
+      //     Console.WriteLine("치트키입니다.");
+      //     break;
+      //   default:
+      //     // default는 if / else 문에서 else에 해당된다. 즉, 모든 조건에 만족하지 않는다면 밑의 로직이 실행
+      //     Console.WriteLine("다 실패했습니다.");
+      //     break;
+      // }
+
+      // 삼항연산자
+      int number = 24;
+      bool isPair = (number % 2 == 0 ? true : false); // true: 짝수, false: 홀수
+      Console.WriteLine(isPair);
     }
   }
 }
