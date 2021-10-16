@@ -169,9 +169,89 @@ namespace HelloWord
       // }
 
       // 삼항연산자
-      int number = 24;
-      bool isPair = (number % 2 == 0 ? true : false); // true: 짝수, false: 홀수
-      Console.WriteLine(isPair);
+      // int number = 24;
+      // bool isPair = (number % 2 == 0 ? true : false); // true: 짝수, false: 홀수
+      // Console.WriteLine(isPair);
+
+      // 가위바위보 게임
+      // 0: 가위, 1: 바위, 2:보
+      Random rand = new Random();
+      int aiChoice = rand.Next(0, 3); // 0~2사이의 랜덤 값
+
+      int choice = Convert.ToInt32(Console.ReadLine());
+
+      switch (choice)
+      {
+        case 0:
+          Console.WriteLine("당신의 선택은 가위입니다.");
+          break;
+        case 1:
+          Console.WriteLine("당신의 선택은 바위입니다.");
+          break;
+        case 2:
+          Console.WriteLine("당신의 선택은 보입니다.");
+          break;
+      }
+
+      switch (aiChoice)
+      {
+        case 0:
+          Console.WriteLine("컴퓨터의 선택은 가위입니다.");
+          break;
+        case 1:
+          Console.WriteLine("컴퓨터의 선택은 바위입니다.");
+          break;
+        case 2:
+          Console.WriteLine("컴퓨터의 선택은 보입니다.");
+          break;
+      }
+
+      // 승리, 패패, 무승부
+      switch (choice)
+      {
+        case 0:
+          if (aiChoice == 0)
+          {
+            Console.WriteLine("무승부입니다.");
+          }
+          else if (aiChoice == 1)
+          {
+            Console.WriteLine("패패했습니다.");
+          }
+          else
+          {
+            Console.WriteLine("승리했습니다.");
+          }
+          break;
+        case 1: // 바위
+          if (aiChoice == 0) // 가위
+          {
+            Console.WriteLine("승리했습니다.");
+          }
+          else if (aiChoice == 1) // 바위
+          {
+            Console.WriteLine("무승부입니다.");
+          }
+          else // 보
+          {
+            Console.WriteLine("패패했습니다.");
+          }
+          break;
+        case 2: // 내가 보
+          if (aiChoice == 0) // 가위
+          {
+            Console.WriteLine("패패했습니다.");
+          }
+          else if (aiChoice == 1) // 바위
+          {
+            Console.WriteLine("승리했습니다.");
+          }
+          else // 보
+          {
+            Console.WriteLine("무승부입니다.");
+          }
+          break;
+      }
     }
   }
 }
