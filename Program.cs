@@ -260,22 +260,27 @@ namespace HelloWord
       //     break;
       // }
 
-      // while 반복문
+      // while 반복문 & for 반복문
 
-      int count = 0;
-      while (count < 5)
+      // int count = 0;
+      // while (count < 5)
+      // {
+      //   Console.WriteLine("Hello World");
+      //   count++;
+      // }
+
+      // string answer;
+      // do
+      // {
+      //   Console.WriteLine("강사님은 잘생기셨나요?(y/n): ");
+      //   answer = Console.ReadLine();
+      // } while (answer != "y");
+      // Console.WriteLine("정답입니다!");
+
+      for (int i = 0; i < 5; i++)
       {
         Console.WriteLine("Hello World");
-        count++;
       }
-
-      string answer;
-      do
-      {
-        Console.WriteLine("강사님은 잘생기셨나요?(y/n): ");
-        answer = Console.ReadLine();
-      } while (answer != "y");
-      Console.WriteLine("정답입니다!");
     }
   }
 }
