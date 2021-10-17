@@ -4,6 +4,12 @@ namespace HelloWord
 {
   class Program
   {
+    enum Choice
+    {
+      Rock = 1,
+      Paper = 2,
+      Scissors = 0
+    }
     static void Main(string[] args)
     {
       //   int hp;
@@ -175,6 +181,7 @@ namespace HelloWord
 
       // 가위바위보 게임
       // 0: 가위, 1: 바위, 2:보
+
       Random rand = new Random();
       int aiChoice = rand.Next(0, 3); // 0~2사이의 랜덤 값
 
@@ -182,26 +189,26 @@ namespace HelloWord
 
       switch (choice)
       {
-        case 0:
+        case (int)Choice.Scissors:
           Console.WriteLine("당신의 선택은 가위입니다.");
           break;
-        case 1:
+        case (int)Choice.Rock:
           Console.WriteLine("당신의 선택은 바위입니다.");
           break;
-        case 2:
+        case (int)Choice.Paper:
           Console.WriteLine("당신의 선택은 보입니다.");
           break;
       }
 
       switch (aiChoice)
       {
-        case 0:
+        case (int)Choice.Scissors:
           Console.WriteLine("컴퓨터의 선택은 가위입니다.");
           break;
-        case 1:
+        case (int)Choice.Rock:
           Console.WriteLine("컴퓨터의 선택은 바위입니다.");
           break;
-        case 2:
+        case (int)Choice.Paper:
           Console.WriteLine("컴퓨터의 선택은 보입니다.");
           break;
       }
@@ -209,12 +216,12 @@ namespace HelloWord
       // 승리, 패패, 무승부
       switch (choice)
       {
-        case 0:
-          if (aiChoice == 0)
+        case (int)Choice.Scissors:
+          if (aiChoice == (int)Choice.Scissors)
           {
             Console.WriteLine("무승부입니다.");
           }
-          else if (aiChoice == 1)
+          else if (aiChoice == (int)Choice.Rock)
           {
             Console.WriteLine("패패했습니다.");
           }
@@ -223,12 +230,12 @@ namespace HelloWord
             Console.WriteLine("승리했습니다.");
           }
           break;
-        case 1: // 바위
-          if (aiChoice == 0) // 가위
+        case (int)Choice.Rock: // 바위
+          if (aiChoice == (int)Choice.Scissors) // 가위
           {
             Console.WriteLine("승리했습니다.");
           }
-          else if (aiChoice == 1) // 바위
+          else if (aiChoice == (int)Choice.Rock) // 바위
           {
             Console.WriteLine("무승부입니다.");
           }
@@ -237,12 +244,12 @@ namespace HelloWord
             Console.WriteLine("패패했습니다.");
           }
           break;
-        case 2: // 내가 보
-          if (aiChoice == 0) // 가위
+        case (int)Choice.Paper: // 내가 보
+          if (aiChoice == (int)Choice.Scissors) // 가위
           {
             Console.WriteLine("패패했습니다.");
           }
-          else if (aiChoice == 1) // 바위
+          else if (aiChoice == (int)Choice.Rock) // 바위
           {
             Console.WriteLine("승리했습니다.");
           }
