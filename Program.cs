@@ -28,13 +28,47 @@ namespace HelloWord
       number++;
     }
 
+    static int AddOne2(int number)
+    {
+      return number + 1;
+    }
+
+    static void Swap(ref int a, ref int b)
+    {
+      int temp = a;
+      a = b;
+      b = temp;
+    }
+
+    static void Divide(int a, int b, out int result1, out int result2)
+    {
+      result1 = a / b;
+      result2 = a % b;
+    }
+
     static void Main(string[] args)
     {
-      int result = Program.AddFn(34, 512);
-      int a = 0;
-      Program.AddOne(ref a);
-      // Console.WriteLine(Program.AddOne(a));
-      Console.WriteLine(a);
+      // int result = Program.AddFn(34, 512);
+      // int a = 0;
+      // Program.AddOne(ref a);
+      // Console.WriteLine(a);
+
+      // a = Program.AddOne2(a);
+      // Console.WriteLine(a);
+      // int num1 = 1;
+      // int num2 = 2;
+      // Program.Swap(ref num1, ref num2);
+      // Console.WriteLine(num1);
+      // Console.WriteLine(num2);
+      int num1 = 10;
+      int num2 = 3;
+
+      int result1;
+      int result2;
+      Divide(num1, num2, out result1, out result2);
+      Console.WriteLine(result1);
+      Console.WriteLine(result2);
+
       //   int hp;
       //   hp = 100;
       //   // 정수 = 1, 2, 3, 10, 100 같이 딱 떨어지는 숫자(음수, 0, 양수 모두) -> int
