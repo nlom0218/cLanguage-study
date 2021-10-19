@@ -10,8 +10,31 @@ namespace HelloWord
       Paper = 2,
       Scissors = 0
     }
+
+    // Method Function
+    static void HellowWorld()
+    {
+      Console.WriteLine("Hello World");
+    }
+
+    // 덧셈 함수
+    static int AddFn(int a, int b)
+    {
+      return (a + b);
+    }
+
+    static void AddOne(ref int number)
+    {
+      number++;
+    }
+
     static void Main(string[] args)
     {
+      int result = Program.AddFn(34, 512);
+      int a = 0;
+      Program.AddOne(ref a);
+      // Console.WriteLine(Program.AddOne(a));
+      Console.WriteLine(a);
       //   int hp;
       //   hp = 100;
       //   // 정수 = 1, 2, 3, 10, 100 같이 딱 떨어지는 숫자(음수, 0, 양수 모두) -> int
@@ -277,10 +300,41 @@ namespace HelloWord
       // } while (answer != "y");
       // Console.WriteLine("정답입니다!");
 
-      for (int i = 0; i < 5; i++)
-      {
-        Console.WriteLine("Hello World");
-      }
+      // for (int i = 0; i < 5; i++)
+      // {
+      //   Console.WriteLine("Hello World");
+      // }
+
+      // break
+      // int num = 97;
+      // bool isPrime = true;
+      // for (int i = 2; i < num; i++)
+      // {
+      //   if (num % i == 0)
+      //   {
+      //     isPrime = false;
+      //     break;
+      //   }
+      // }
+      // if (isPrime)
+      // {
+      //   Console.WriteLine("소수입니다.");
+      // }
+      // else
+      // {
+      //   Console.WriteLine("소수가 아닙니다.");
+      // }
+
+      // for (int i = 1; i < 101; i++)
+      // {
+      //   if (i % 3 != 0)
+      //     continue;
+
+      //   Console.WriteLine($"3으로 나뉘는 숫자 발견: {i}");
+
+      // }
+
+      // function
     }
   }
 }
