@@ -4,54 +4,54 @@ namespace HelloWord
 {
   class Program
   {
-    enum Choice
-    {
-      Rock = 1,
-      Paper = 2,
-      Scissors = 0
-    }
+    // enum Choice
+    // {
+    //   Rock = 1,
+    //   Paper = 2,
+    //   Scissors = 0
+    // }
 
     // Method Function
-    static void HellowWorld()
-    {
-      Console.WriteLine("Hello World");
-    }
+    // static void HellowWorld()
+    // {
+    //   Console.WriteLine("Hello World");
+    // }
 
-    static void AddOne(ref int number)
-    {
-      number++;
-    }
+    // static void AddOne(ref int number)
+    // {
+    //   number++;
+    // }
 
-    static int AddOne2(int number)
-    {
-      return number + 1;
-    }
+    // static int AddOne2(int number)
+    // {
+    //   return number + 1;
+    // }
 
-    static void Swap(ref int a, ref int b)
-    {
-      int temp = a;
-      a = b;
-      b = temp;
-    }
+    // static void Swap(ref int a, ref int b)
+    // {
+    //   int temp = a;
+    //   a = b;
+    //   b = temp;
+    // }
 
-    static void Divide(int a, int b, out int result1, out int result2)
-    {
-      result1 = a / b;
-      result2 = a % b;
-    }
+    // static void Divide(int a, int b, out int result1, out int result2)
+    // {
+    //   result1 = a / b;
+    //   result2 = a % b;
+    // }
 
-    static void Print(int value)
-    {
-      System.Console.WriteLine(value);
-    }
+    // static void Print(int value)
+    // {
+    //   System.Console.WriteLine(value);
+    // }
 
-    // overloading => 함수 이름의 재사용
-    static int AddFn(int a, int b)
-    {
-      // Console.WriteLine("Add int 호출");
-      Print(a + b);
-      return (a + b);
-    }
+    // // overloading => 함수 이름의 재사용
+    // static int AddFn(int a, int b)
+    // {
+    //   // Console.WriteLine("Add int 호출");
+    //   Print(a + b);
+    //   return (a + b);
+    // }
 
     // static float AddFn(float a, float b)
     // {
@@ -65,26 +65,68 @@ namespace HelloWord
     //   return a + b + c;
     // }
 
-    static int Factorial(int n)
+    // static int Factorial(int n)
+    // {
+    //   // int result = 1;
+    //   // for (int i = 0; i < n; i++)
+    //   // {
+    //   //   result *= (i + 1);
+    //   // }
+    //   // return result;
+    //   if (n <= 1)
+    //     return 1;
+    //   return n * Factorial(n - 1);
+    // }
+    enum ClassType
     {
-      // int result = 1;
-      // for (int i = 0; i < n; i++)
-      // {
-      //   result *= (i + 1);
-      // }
-      // return result;
-      if (n <= 1)
-        return 1;
-      return n * Factorial(n - 1);
+      None = 0,
+      Knight = 1,
+      Archer = 2,
+      Mage = 3
+    }
+
+    static ClassType ChooseClass()
+    {
+      ClassType choice = ClassType.None;
+
+      System.Console.WriteLine("직업을 선택하세요!");
+      System.Console.WriteLine("[1] 기사");
+      System.Console.WriteLine("[2] 궁수");
+      System.Console.WriteLine("[3] 법사");
+
+      string input = Console.ReadLine();
+
+      switch (input)
+      {
+        case "1":
+          choice = ClassType.Knight;
+          break;
+        case "2":
+          choice = ClassType.Archer;
+          break;
+        case "3":
+          choice = ClassType.Mage;
+          break;
+      }
+      return choice;
     }
 
     static void Main(string[] args)
     {
-      Program.AddFn(5, 5);
-      Program.AddFn(5, 10);
-      Program.AddFn(10, 15);
-      Program.AddFn(15, 15);
-      Program.AddFn(10, 20);
+      while (true)
+      {
+        ClassType choice = ChooseClass();
+        if (choice != ClassType.None)
+        {
+
+        }
+      }
+
+      // Program.AddFn(5, 5);
+      // Program.AddFn(5, 10);
+      // Program.AddFn(10, 15);
+      // Program.AddFn(15, 15);
+      // Program.AddFn(10, 20);
       // System.Console.WriteLine(ret);
       // int ret = Factorial(5);
       // System.Console.WriteLine(ret);
