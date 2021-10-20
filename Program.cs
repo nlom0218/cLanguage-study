@@ -17,12 +17,6 @@ namespace HelloWord
       Console.WriteLine("Hello World");
     }
 
-    // 덧셈 함수
-    static int AddFn(int a, int b)
-    {
-      return (a + b);
-    }
-
     static void AddOne(ref int number)
     {
       number++;
@@ -46,8 +40,33 @@ namespace HelloWord
       result2 = a % b;
     }
 
+    // overloading => 함수 이름의 재사용
+    static int AddFn(int a, int b)
+    {
+      Console.WriteLine("Add int 호출");
+      return (a + b);
+    }
+
+    static float AddFn(float a, float b)
+    {
+      Console.WriteLine("Add float 호출");
+      return (a + b);
+    }
+
+    static int AddFn(int a, int b, int c)
+    {
+      Console.WriteLine("Add int 호출");
+      return a + b + c;
+    }
+
     static void Main(string[] args)
     {
+      int ret = Program.AddFn(2, 3);
+      float ret2 = Program.AddFn(2.0f, 3.0f);
+      int ret3 = Program.AddFn(2, 3, 4);
+      Console.WriteLine(ret);
+      Console.WriteLine(ret2);
+      Console.WriteLine(ret3);
       // int result = Program.AddFn(34, 512);
       // int a = 0;
       // Program.AddOne(ref a);
@@ -60,14 +79,14 @@ namespace HelloWord
       // Program.Swap(ref num1, ref num2);
       // Console.WriteLine(num1);
       // Console.WriteLine(num2);
-      int num1 = 10;
-      int num2 = 3;
+      // int num1 = 10;
+      // int num2 = 3;
 
-      int result1;
-      int result2;
-      Divide(num1, num2, out result1, out result2);
-      Console.WriteLine(result1);
-      Console.WriteLine(result2);
+      // int result1;
+      // int result2;
+      // Divide(num1, num2, out result1, out result2);
+      // Console.WriteLine(result1);
+      // Console.WriteLine(result2);
 
       //   int hp;
       //   hp = 100;
