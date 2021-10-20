@@ -40,24 +40,30 @@ namespace HelloWord
       result2 = a % b;
     }
 
+    static void Print(int value)
+    {
+      System.Console.WriteLine(value);
+    }
+
     // overloading => 함수 이름의 재사용
     static int AddFn(int a, int b)
     {
-      Console.WriteLine("Add int 호출");
+      // Console.WriteLine("Add int 호출");
+      Print(a + b);
       return (a + b);
     }
 
-    static float AddFn(float a, float b)
-    {
-      Console.WriteLine("Add float 호출");
-      return (a + b);
-    }
+    // static float AddFn(float a, float b)
+    // {
+    //   Console.WriteLine("Add float 호출");
+    //   return (a + b);
+    // }
 
-    static int AddFn(int a, int b, int c)
-    {
-      Console.WriteLine("Add int 호출");
-      return a + b + c;
-    }
+    // static int AddFn(int a, int b, int c)
+    // {
+    //   Console.WriteLine("Add int 호출");
+    //   return a + b + c;
+    // }
 
     static int Factorial(int n)
     {
@@ -74,8 +80,14 @@ namespace HelloWord
 
     static void Main(string[] args)
     {
-      int ret = Factorial(5);
-      System.Console.WriteLine(ret);
+      Program.AddFn(5, 5);
+      Program.AddFn(5, 10);
+      Program.AddFn(10, 15);
+      Program.AddFn(15, 15);
+      Program.AddFn(10, 20);
+      // System.Console.WriteLine(ret);
+      // int ret = Factorial(5);
+      // System.Console.WriteLine(ret);
       // for (int i = 0; i < 9; i++)
       // {
       //   for (int z = 0; z < 9; z++)
