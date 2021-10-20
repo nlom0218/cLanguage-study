@@ -85,6 +85,12 @@ namespace HelloWord
       Mage = 3
     }
 
+    struct Player
+    {
+      public int hp;
+      public int attack;
+    }
+
     static ClassType ChooseClass()
     {
       ClassType choice = ClassType.None;
@@ -111,6 +117,28 @@ namespace HelloWord
       return choice;
     }
 
+    static void CreatePalyer(ClassType choice, out Player player)
+    {
+      switch (choice)
+      {
+        case ClassType.Knight:
+          player.hp = 100;
+          player.attack = 10;
+          break;
+        case ClassType.Archer:
+          player.hp = 75;
+          player.attack = 12;
+          break;
+        case ClassType.Mage:
+          player.hp = 50;
+          player.attack = 15;
+          break;
+        default:
+          player.hp = 0;
+          player.attack = 0;
+          break;
+      }
+    }
     static void Main(string[] args)
     {
       while (true)
@@ -118,7 +146,13 @@ namespace HelloWord
         ClassType choice = ChooseClass();
         if (choice != ClassType.None)
         {
+          // 캐릭터 생성
+          Player player;
+          CreatePalyer(choice, out player);
 
+          System.Console.WriteLine($"HP{player.hp}, Attack{player.attack}");
+
+          // 기사(100/10) 궁수(75/12) 법사(50/15)
         }
       }
 
