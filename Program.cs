@@ -59,14 +59,51 @@ namespace HelloWord
       return a + b + c;
     }
 
+    static int Factorial(int n)
+    {
+      // int result = 1;
+      // for (int i = 0; i < n; i++)
+      // {
+      //   result *= (i + 1);
+      // }
+      // return result;
+      if (n <= 1)
+        return 1;
+      return n * Factorial(n - 1);
+    }
+
     static void Main(string[] args)
     {
-      int ret = Program.AddFn(2, 3);
-      float ret2 = Program.AddFn(2.0f, 3.0f);
-      int ret3 = Program.AddFn(2, 3, 4);
-      Console.WriteLine(ret);
-      Console.WriteLine(ret2);
-      Console.WriteLine(ret3);
+      int ret = Factorial(5);
+      System.Console.WriteLine(ret);
+      // for (int i = 0; i < 9; i++)
+      // {
+      //   for (int z = 0; z < 9; z++)
+      //   {
+      //     Console.WriteLine($"{i + 1} * {z + 1} = {(i + 1) * (z + 1)}");
+      //   }
+      // }
+      // string star = "*";
+      // for (int i = 0; i < 5; i++)
+      // {
+      //   System.Console.WriteLine(star);
+      //   star = star + "*";
+      // }
+
+      // for (int i = 0; i < 5; i++)
+      // {
+      //   for (int j = 0; j < i + 1; j++)
+      //   {
+      //     System.Console.Write("*");
+      //   }
+      //   System.Console.WriteLine();
+      // }
+      // int ret = Program.AddFn(2, 3);
+      // float ret2 = Program.AddFn(2.0f, 3.0f);
+      // int ret3 = Program.AddFn(2, 3, 4);
+      // Console.WriteLine(ret);
+      // Console.WriteLine(ret2);
+      // Console.WriteLine(ret3);
       // int result = Program.AddFn(34, 512);
       // int a = 0;
       // Program.AddOne(ref a);
