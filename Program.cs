@@ -181,18 +181,61 @@ namespace HelloWord
           break;
       }
     }
-    static void EnterField()
+
+    static void Fight(ref Player player, ref Monster monster)
     {
-      System.Console.WriteLine("필드에 접속했습니다!");
+      while (true)
+      {
+        monster.hp -= player.attack;
+        if (monster.hp <= 0)
+        {
+          System.Console.WriteLine("승리했습니다!");
+          System.Console.WriteLine($"남은 체력: {player.hp}");
+          break;
+        }
+        player.hp -= monster.attack;
+        if (player.hp <= 0)
+        {
+          System.Console.WriteLine("패패했습니다!");
+          break;
+        }
+      }
+    }
+    static void EnterField(ref Player player)
+    {
+      while (true)
+      {
+        System.Console.WriteLine("필드에 접속했습니다!");
 
-      Monster monster;
-      CreateRandomMonster(out monster);
+        Monster monster;
+        CreateRandomMonster(out monster);
 
-      System.Console.WriteLine("[1] 전투 모드로 돌입");
-      System.Console.WriteLine("[2] 일정 확률로 마을로 도망");
+        System.Console.WriteLine("[1] 전투 모드로 돌입");
+        System.Console.WriteLine("[2] 일정 확률로 마을로 도망");
+
+        string input = Console.ReadLine();
+        if (input == "1")
+        {
+          Fight(ref player, ref monster);
+        }
+        else if (input == "2")
+        {
+          Random rand = new Random();
+          int randValue = rand.Next(0, 101);
+          if (randValue <= 33)
+          {
+            System.Console.WriteLine("도망치는데 성공했습니다!");
+            break;
+          }
+          else
+          {
+            Fight(ref player, ref monster);
+          }
+        }
+      }
     }
 
-    static void EnterGame()
+    static void EnterGame(ref Player player)
     {
       while (true)
       {
@@ -204,7 +247,7 @@ namespace HelloWord
         switch (input)
         {
           case "1":
-            EnterField();
+            EnterField(ref player);
             break;
           case "2":
             return;
@@ -217,15 +260,16 @@ namespace HelloWord
       while (true)
       {
         ClassType choice = ChooseClass();
-        if (choice != ClassType.None)
-        {
-          // 캐릭터 생성
-          Player player;
-          CreatePalyer(choice, out player);
+        if (choice == ClassType.None)
+          continue;
 
-          EnterGame();
-        }
+        // 캐릭터 생성
+        Player player;
+        CreatePalyer(choice, out player);
+
+        EnterGame(ref player);
       }
+
 
       // Program.AddFn(5, 5);
       // Program.AddFn(5, 10);
