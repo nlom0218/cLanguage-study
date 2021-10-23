@@ -14,6 +14,20 @@ namespace HelloWord
 
     public int attack;
 
+    // 생성자
+    public Knigth()
+    {
+      hp = 100;
+      attack = 10;
+      Console.WriteLine("생성자 호출");
+    }
+
+    public Knigth(int hp) : this()
+    {
+      this.hp = hp;
+      Console.WriteLine("Int 생성자 호출");
+    }
+
     public Knigth Clone()
     {
       Knigth knigth = new Knigth();
@@ -42,30 +56,9 @@ namespace HelloWord
 
   class Program
   {
-    static void KillMage(Mage mage)
-    {
-      mage.hp = 0;
-    }
-    static void KillKnight(Knigth knigth)
-    {
-      knigth.hp = 0;
-    }
     static void Main(string[] args)
     {
-      Mage mage;
-      mage.hp = 100;
-      mage.attack = 50;
-
-      Mage mage2 = mage;
-      mage2.hp = 0;
-
-      Knigth knigth = new Knigth();
-      knigth.hp = 100;
-      knigth.attack = 10;
-
-      Knigth knigth2 = knigth.Clone();
-      knigth2.hp = 0;
-
+      Knigth knigth = new Knigth(50);
     }
   }
 }
