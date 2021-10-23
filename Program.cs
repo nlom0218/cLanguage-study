@@ -2,71 +2,53 @@
 
 namespace HelloWord
 {
-  // 객체 (OOP Object Oriented Programming)
+  // 객체 (OOP Object Oriented Programming) => 은닉성, 상속성, 다양성
   // 속성: 데이터로 표현
   // 기능: 함수로 표현
 
-  // 변수를 넘길 때 참조
-  class Knigth
+  class Player // 부모클래스 또는 기반클래스
+  // 자식클래스에 공통적으로 가지고 있는 인스턴스, 함수를 넣으면 편하다!
   {
-    static public int count = 1;
-
-    // public은 다른 클래스에서도 사용할 수 있도록 해준다. 
+    static public int count = 1; // 오로지 한개만 존재
     public int id;
-
     public int hp;
-
     public int attack;
 
-    static public Knigth CreateKnight()
+    public Player()
     {
-      Knigth night = new Knigth();
-      night.hp = 100;
-      night.attack = 1;
-      return night;
+      Console.WriteLine("Player 생성자 호출!");
     }
 
-    // 생성자
-    public Knigth()
-    {
-      id = count;
-      count++;
-
-      hp = 100;
-      attack = 10;
-      Console.WriteLine("생성자 호출");
-    }
-
-    public Knigth(int hp) : this()
+    public Player(int hp)
     {
       this.hp = hp;
-      Console.WriteLine("Int 생성자 호출");
+      Console.WriteLine("player hp 생성자 호출!");
     }
-
-    public Knigth Clone()
-    {
-      Knigth knigth = new Knigth();
-      knigth.hp = hp;
-      knigth.attack = attack;
-      return knigth;
-    }
-
     public void Move()
     {
-      Console.WriteLine("Knight Move");
+      Console.WriteLine("Knight Player");
     }
 
     public void Attack()
     {
-      Console.WriteLine("Knight Attack ");
+      Console.WriteLine("Knight Player ");
     }
   }
 
-  // 변수를 넘길 떼 복사
-  struct Mage
+  class Mage : Player // 상속을 받는 자식클래스 또는 파생클래스
   {
-    public int hp;
-    public int attack;
+  }
+
+  class Archer : Player
+  {
+
+  }
+
+  // 변수를 넘길 때 참조
+  class Knigth : Player
+  {
+
+
   }
 
   class Program
@@ -74,10 +56,8 @@ namespace HelloWord
     static void Main(string[] args)
     {
       Knigth knigth = new Knigth();
-      Knigth knigth2 = new Knigth();
-      Knigth knigth3 = new Knigth();
+      Mage mage = new Mage();
 
-      Knigth knigth4 = Knigth.CreateKnight();
     }
   }
 }
