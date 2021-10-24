@@ -2,7 +2,7 @@
 
 namespace HelloWord
 {
-  // 객체 (OOP Object Oriented Programming) => 은닉성, 상속성, 다양성
+  // 객체 (OOP Object Oriented Programming) => 은닉성, 상속성, 다양성(polymorphism)
   // 속성: 데이터로 표현
   // 기능: 함수로 표현
 
@@ -11,23 +11,37 @@ namespace HelloWord
   {
     protected int hp;
     protected int attack;
+
+    public virtual void Move()
+    {
+      Console.WriteLine("Player 이동!");
+    }
   }
 
   class Mage : Player // 상속을 받는 자식클래스 또는 파생클래스
   {
     public int mp;
+    public override void Move()
+    {
+      Console.WriteLine("Mage 이동!");
+    }
   }
 
   // 변수를 넘길 때 참조
   class Knigth : Player
   {
-
+    public override void Move()
+    {
+      base.Move();
+      Console.WriteLine("Knigth 이동!");
+    }
   }
 
   class Program
   {
     static void EnterGame(Player player)
     {
+      player.Move();
       Mage mage = (player as Mage);
       if (mage != null)
       {
@@ -41,7 +55,6 @@ namespace HelloWord
       Mage mage = new Mage();
 
       EnterGame(knigth);
-      EnterGame(mage);
     }
   }
 }
