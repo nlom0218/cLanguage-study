@@ -24,7 +24,7 @@ namespace HelloWord
   {
     public Slime() : base(MonsterType.Slime)
     {
-      SetInfo(10, 1);
+      SetInfo(10, 10);
     }
   }
 
@@ -32,7 +32,7 @@ namespace HelloWord
   {
     public Orc() : base(MonsterType.Orc)
     {
-      SetInfo(20, 2);
+      SetInfo(20, 20);
     }
   }
 
@@ -40,7 +40,7 @@ namespace HelloWord
   {
     public Skeleton() : base(MonsterType.Skeleton)
     {
-      SetInfo(15, 5);
+      SetInfo(15, 15);
     }
   }
 }
