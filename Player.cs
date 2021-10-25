@@ -10,25 +10,17 @@ namespace HelloWord
     Mage = 3
   }
 
-  class Player
+  class Player : Creature
   {
     protected PlayerType type = PlayerType.None;
-    protected int hp = 0;
-    protected int attack = 0;
 
-    protected Player(PlayerType type)
+
+    protected Player(PlayerType type) : base(CreatureType.Player)
     {
       this.type = type;
     }
 
-    public void SetInfo(int hp, int attack)
-    {
-      this.hp = hp;
-      this.attack = attack;
-    }
-
-    public int GetHp() { return hp; }
-    public int GetATtack() { return attack; }
+    public PlayerType CetPlayerType() { return type; }
   }
 
   class Knight : Player
