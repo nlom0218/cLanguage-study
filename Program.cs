@@ -6,13 +6,12 @@ namespace HelloWord
   {
     static void Main(string[] args)
     {
-      Player player = new Knight();
-      Player player2 = new Archer();
-      Monster monster = new Orc();
+      Game game = new Game();
 
-      int damage = player.GetAttack();
-      monster.OnDamaged(damage);
-      player2.OnDamaged(damage);
+      while (true)
+      {
+        game.Process();
+      }
     }
   }
 }
