@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace HelloWord
 {
@@ -71,7 +72,24 @@ namespace HelloWord
       int[] scores = new int[] { 10, 30, 40, 20, 50 };
 
       Map map = new Map();
-      map.Render();
+      // map.Render();
+
+      List<int> list = new List<int>();
+      for (int i = 0; i < 5; i++)
+        list.Add(i);
+
+      // 삽입
+      list.Insert(2, 999);
+      // 삭제
+      list.Remove(3);
+      list.RemoveAt(0);
+      list.Clear();
+
+      foreach (int num in list)
+      {
+        System.Console.WriteLine(num);
+      }
+
     }
   }
 }
