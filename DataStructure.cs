@@ -2,32 +2,51 @@ using System;
 
 namespace HelloWord
 {
+
   class DataStructure
   {
-    public void Arr()
+    static int GetHighestScore(int[] scores)
     {
-      // array
-      int[] scores = new int[5] { 10, 20, 30, 40, 50 };
-      int[] scores2 = scores;
-
-      scores2[0] = 999;
-
-      // 0 1 2 3 4
-      // scores[0] = 10;
-      // scores[1] = 20;
-      // scores[2] = 30;
-      // scores[3] = 40;
-      // scores[4] = 50;
-
-      for (int i = 0; i < scores.Length; i++)
-      {
-        Console.WriteLine(scores[i]);
-      }
-
+      int highestScore = 0;
       foreach (int score in scores)
       {
-        Console.WriteLine(score);
+        if (highestScore < score)
+          highestScore = score;
       }
+      return highestScore;
+    }
+
+    static int GetAverageScore(int[] scores)
+    {
+      if (scores.Length == 0)
+        return 0;
+
+      int totalNum = 0;
+      foreach (int score in scores)
+      {
+        totalNum += score;
+      }
+
+      return totalNum / scores.Length;
+    }
+
+    static int GetIndexOf(int[] scores, int value)
+    {
+      int index = Array.IndexOf(scores, value);
+      return index;
+    }
+
+    static void Sort(int[] scores)
+    {
+      Array.Sort(scores);
+    }
+    public void Arr()
+    {
+      int[] scores = new int[] { 10, 30, 40, 20, 50 };
+      int averageScore = GetAverageScore(scores);
+      int valueIndex = GetIndexOf(scores, 15);
+      int highestScore = GetHighestScore(scores);
+
     }
   }
 }
