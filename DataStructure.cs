@@ -67,6 +67,12 @@ namespace HelloWord
       }
     }
 
+    class Monster
+    {
+      public int id;
+      public Monster(int id) { this.id = id; }
+    }
+
     public void Arr()
     {
       int[] scores = new int[] { 10, 30, 40, 20, 50 };
@@ -85,10 +91,17 @@ namespace HelloWord
       list.RemoveAt(0);
       list.Clear();
 
-      foreach (int num in list)
+      Dictionary<int, Monster> dic = new Dictionary<int, Monster>();
+      for (int i = 0; i < 10000; i++)
       {
-        System.Console.WriteLine(num);
+        dic.Add(i, new Monster(i));
       }
+
+      Monster mon;
+      bool found = dic.TryGetValue(500, out mon);
+
+      dic.Remove(7777);
+      dic.Clear();
 
     }
   }
