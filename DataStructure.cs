@@ -40,13 +40,38 @@ namespace HelloWord
     {
       Array.Sort(scores);
     }
+
+    class Map
+    {
+      int[,] tiles = {
+          {1, 1, 1, 1, 1},
+          {1, 0, 0, 0, 1},
+          {1, 0, 0, 0, 1},
+          {1, 0, 0, 0, 1},
+          {1, 1, 1, 1, 1}
+        };
+      public void Render()
+      {
+        for (int y = 0; y < tiles.GetLength(1); y++)
+        {
+          for (int x = 0; x < tiles.GetLength(0); x++)
+          {
+            if (tiles[y, x] == 1)
+              Console.Write("🤒");
+            else
+              Console.Write("🥶");
+          }
+          Console.WriteLine();
+        }
+      }
+    }
+
     public void Arr()
     {
       int[] scores = new int[] { 10, 30, 40, 20, 50 };
-      int averageScore = GetAverageScore(scores);
-      int valueIndex = GetIndexOf(scores, 15);
-      int highestScore = GetHighestScore(scores);
 
+      Map map = new Map();
+      map.Render();
     }
   }
 }
