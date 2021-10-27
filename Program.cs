@@ -13,7 +13,9 @@ namespace HelloWord
       DelegateGrammer delegateGrammer = new DelegateGrammer();
       EventGrammer eventGrammer = new EventGrammer();
       LambdaGrammer lambdaGrammer = new LambdaGrammer();
-      lambdaGrammer.Lambda();
+      ExceptionGrammer exceptionGrammer = new ExceptionGrammer();
+      exceptionGrammer.Exception();
+      // lambdaGrammer.Lambda();
       // eventGrammer.Event();
       // dataStructure.Arr();
 
