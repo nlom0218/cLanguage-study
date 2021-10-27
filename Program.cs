@@ -8,7 +8,8 @@ namespace HelloWord
     {
       Game game = new Game();
       DataStructure dataStructure = new DataStructure();
-      dataStructure.Arr();
+      ActGrammer actGrammer = new ActGrammer();
+      // dataStructure.Arr();
 
       while (true)
       {
