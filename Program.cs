@@ -9,6 +9,8 @@ namespace HelloWord
       Game game = new Game();
       DataStructure dataStructure = new DataStructure();
       ActGrammer actGrammer = new ActGrammer();
+      PropertyGrammer propertyGrammer = new PropertyGrammer();
+      propertyGrammer.Property();
       // dataStructure.Arr();
 
       while (true)

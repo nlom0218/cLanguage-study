@@ -2,10 +2,10 @@
 
 // namespace HelloWord
 // {
-//   class InterfaceGrammer
+//   class PropertyGrammer
 //   {
 
-//     public void Interface()
+//     public void Property()
 //     {
 
 //     }
