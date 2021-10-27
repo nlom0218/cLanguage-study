@@ -11,7 +11,8 @@ namespace HelloWord
       ActGrammer actGrammer = new ActGrammer();
       PropertyGrammer propertyGrammer = new PropertyGrammer();
       DelegateGrammer delegateGrammer = new DelegateGrammer();
-      delegateGrammer.Delegate();
+      EventGrammer eventGrammer = new EventGrammer();
+      eventGrammer.Event();
       // dataStructure.Arr();
 
       while (true)
