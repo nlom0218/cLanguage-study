@@ -12,7 +12,9 @@ namespace HelloWord
       PropertyGrammer propertyGrammer = new PropertyGrammer();
       DelegateGrammer delegateGrammer = new DelegateGrammer();
       EventGrammer eventGrammer = new EventGrammer();
-      eventGrammer.Event();
+      LambdaGrammer lambdaGrammer = new LambdaGrammer();
+      lambdaGrammer.Lambda();
+      // eventGrammer.Event();
       // dataStructure.Arr();
 
       while (true)
