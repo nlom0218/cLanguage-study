@@ -10,7 +10,8 @@ namespace HelloWord
       DataStructure dataStructure = new DataStructure();
       ActGrammer actGrammer = new ActGrammer();
       PropertyGrammer propertyGrammer = new PropertyGrammer();
-      propertyGrammer.Property();
+      DelegateGrammer delegateGrammer = new DelegateGrammer();
+      delegateGrammer.Delegate();
       // dataStructure.Arr();
 
       while (true)
